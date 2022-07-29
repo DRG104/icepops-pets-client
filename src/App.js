@@ -42,7 +42,7 @@ const App = () => {
 
 	return (
 		<Fragment>
-				<Header user={user} />
+			<Header user={user} />
 				<Routes>
 					<Route 
 						path='/' 
@@ -71,33 +71,33 @@ const App = () => {
 							/>
 						}
 					/>
-			<Route
-				path='/sign-out'
-				element={
-					<RequireAuth 
-						user={user}
-					>
-					<SignOut 
-						msgAlert={msgAlert} 
-						clearUser={clearUser} 
-						user={user} 
-					/>
-				</RequireAuth>
-				}
-			/>
-			<Route
-				path='/change-password'
-				element={
-					<RequireAuth 
-						user={user}
-					>
-					<ChangePassword 
-						msgAlert={msgAlert} 
-						user={user} 
-					/>
+				<Route
+					path='/sign-out'
+					element={
+						<RequireAuth 
+							user={user}
+						>
+						<SignOut 
+							msgAlert={msgAlert} 
+							clearUser={clearUser} 
+							user={user} 
+						/>
 					</RequireAuth>
-				}
-			/>
+					}
+				/>
+				<Route
+					path='/change-password'
+					element={
+						<RequireAuth 
+							user={user}
+						>
+						<ChangePassword 
+							msgAlert={msgAlert} 
+							user={user} 
+						/>
+						</RequireAuth>
+					}
+				/>
 			</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
